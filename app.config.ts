@@ -4,8 +4,8 @@ const isProduction = process.env.EAS_BUILD_PROFILE === "production";
 
 const config: ExpoConfig = {
   version: "1.1.0",
-  name: "QRU?",
-  slug: "qru",
+  name: "QRU? Staging",
+  slug: "qru-staging",
   orientation: "portrait",
   platforms: ["ios", "android"],
   icon: isProduction
@@ -16,7 +16,7 @@ const config: ExpoConfig = {
   newArchEnabled: true,
   ios: {
     supportsTablet: true,
-    bundleIdentifier: `com.jonsamp.qru${isProduction ? "" : "-dev"}`,
+    bundleIdentifier: `com.jonsamp.qru-staging${isProduction ? "" : "-dev"}`,
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
     },
@@ -26,7 +26,7 @@ const config: ExpoConfig = {
       "android.permission.CAMERA",
       "android.permission.RECORD_AUDIO",
     ],
-    package: `com.jonsamp.qru${isProduction ? "" : "_dev"}`,
+    package: `com.jonsamp.qru-staging${isProduction ? "" : "_dev"}`,
     icon: isProduction
       ? "./assets/images/icon.png"
       : "./assets/images/icon-dev.png",
@@ -74,6 +74,9 @@ const config: ExpoConfig = {
   extra: {
     router: {
       origin: false,
+    },
+    eas: {
+      projectId: "948dac4b-3d02-4142-b205-6d773f05a86e",
     },
   },
   runtimeVersion: {
